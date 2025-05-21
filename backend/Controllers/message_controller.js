@@ -13,11 +13,11 @@ const {
 const { S3Client } = require("@aws-sdk/client-s3");
 const { createPresignedPost } = require("@aws-sdk/s3-presigned-post");
 
-// Use environment variable with fallback
-const apiKey = GENERATIVE_API_KEY || "AIzaSyAnKpOdw7JubQeW-LpAAh_hgGd57ZD3g5w";
-const configuration = new GoogleGenerativeAI(apiKey);
+// Use environment variable only - no hardcoded keys for security
+const apiKey = GENERATIVE_API_KEY || "";
+const configuration = apiKey ? new GoogleGenerativeAI(apiKey) : null;
 const modelId = "gemini-1.5-flash";
-const model = configuration.getGenerativeModel({ model: modelId });
+const model = configuration ? configuration.getGenerativeModel({ model: modelId }) : null;
 
 // Check if API key is properly configured
 const isApiKeyConfigured = apiKey && apiKey.length > 0;

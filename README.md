@@ -63,10 +63,25 @@ npm install
 
 4. Create .env file in the backend directory with the following variables:
 ```
+# Server Configuration
 PORT=5000
+
+# Database
 MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
+
+# JWT Authentication (use a strong, random string)
+JWT_SECRET=your_secure_jwt_secret
+
+# For AI features (optional)
+GENERATIVE_API_KEY=your_google_ai_api_key
+
+# Other optional configurations for full functionality
+# AWS S3 for file storage
+# EMAIL/PASSWORD for notifications
+# CLOUDINARY credentials if using it for image uploads
 ```
+
+IMPORTANT: Never commit your .env file or add API keys directly to your code.
 
 5. Start the backend server
 ```

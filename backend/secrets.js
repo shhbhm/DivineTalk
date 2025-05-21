@@ -10,7 +10,7 @@ const PASSWORD = process.env.PASSWORD;
 const AWS_BUCKET_NAME = process.env.AWS_BUCKET_NAME;
 const AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY;
 const AWS_SECRET = process.env.AWS_SECRET;
-const JWT_SECRET = process.env.JWT_SECRET || "chatapp123456789";
+const JWT_SECRET = process.env.JWT_SECRET || "";
 
 module.exports = {
   MONGO_URI,
