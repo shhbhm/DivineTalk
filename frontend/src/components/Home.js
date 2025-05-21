@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   Flex,
@@ -11,9 +11,13 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
+  Heading,
+  useColorMode,
+  SlideFade,
+  ScaleFade,
 } from "@chakra-ui/react";
 import Auth from "./Authentication/Auth";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import chatContext from "../context/chatContext";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -24,12 +28,14 @@ const Home = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [index, setindex] = useState();
   const navigator = useNavigate();
-
+  const { colorMode } = useColorMode();
+  
+  // Check if user is already authenticated
   useEffect(() => {
     if (isAuthenticated) {
       navigator("/dashboard");
     }
-  });
+  }, [isAuthenticated, navigator]);
 
   const handleloginopen = () => {
     setindex(0);
@@ -42,54 +48,98 @@ const Home = () => {
   };
 
   return (
-    <Box h={"max-content"} verticalAlign="middle">
-      <Flex direction="column" align="center" justify="center" minH="80vh">
-        <Box textAlign="center">
-          <Text fontSize={"7xl"} fontWeight={"bold"} fontFamily={"Work sans"}>
-            Conversa
-          </Text>
-          <Text fontSize="xl" fontWeight="bold" mb={4}>
-            Online Chatting App
-          </Text>
-          <Button mr={3} onClick={handleloginopen}>
-            Login
-          </Button>
-          <Button colorScheme="purple" onClick={handlesignupopen}>
-            Sign Up
-          </Button>
-        </Box>
+    <Box 
+      h={"100vh"} 
+      verticalAlign="middle"
+      bg={colorMode === "dark" ? "gray.800" : "gray.50"}
+      transition="background-color 0.3s ease"
+    >
+      <Flex 
+        direction="column" 
+        align="center" 
+        justify="center" 
+        minH="90vh"
+        p={4}
+      >
+        <SlideFade in={true} offsetY="30px">
+          <Box 
+            textAlign="center"
+            p={8}
+            borderRadius="lg"
+            boxShadow="xl"
+            bg={colorMode === "dark" ? "gray.700" : "white"}
+            maxW="md"
+            w="100%"
+          >
+            <Heading 
+              fontSize={"6xl"} 
+              fontWeight={"bold"} 
+              fontFamily={"Work sans"}
+              bgGradient="linear(to-r, purple.400, pink.400)"
+              bgClip="text"
+              mb={4}
+            >
+              DivineTalk
+            </Heading>
+            <Text fontSize="xl" fontWeight="medium" mb={8} color={colorMode === "dark" ? "gray.300" : "gray.600"}>
+              Connect & Chat in Real-Time
+            </Text>
+            <Flex justifyContent="center" gap={4}>
+              <Button 
+                colorScheme="purple" 
+                size="lg" 
+                onClick={handleloginopen}
+                _hover={{ transform: "translateY(-2px)", boxShadow: "lg" }}
+                transition="all 0.2s"
+              >
+                Login
+              </Button>
+              <Button 
+                colorScheme="pink" 
+                size="lg" 
+                onClick={handlesignupopen}
+                _hover={{ transform: "translateY(-2px)", boxShadow: "lg" }}
+                transition="all 0.2s"
+              >
+                Sign Up
+              </Button>
+            </Flex>
+          </Box>
+        </SlideFade>
       </Flex>
       {/* Copyright */}
       <Text
         fontSize="sm"
         position={"fixed"}
-        bottom={2}
+        bottom={4}
         left={"calc(50% - 155px)"}
-        mt={4}
         textAlign="center"
+        opacity={0.8}
       >
-        &copy; 2024 Conversa. All rights reserved.
-        <Link to="https://github.com/pankil-soni" target="_blank">
-          <Text as="u" color="purple.500" ml={1}>
-            Pankil Soni
+        &copy; 2025 DivineTalk. All rights reserved.
+        <Link to="https://github.com/shhbhm" target="_blank">
+          <Text as="u" color="purple.500" ml={1} display="inline">
+            Shubham Solanki
           </Text>
         </Link>
       </Text>
-      {/* <Auth /> */}
+      
       <Modal
         isOpen={isOpen}
         onClose={onClose}
-        colorScheme="red"
         size={{ base: "md", md: "xl" }}
+        motionPreset="slideInBottom"
       >
-        <ModalOverlay />
-        <ModalContent w={{ base: "95vw" }}>
-          <ModalHeader></ModalHeader>
-          <ModalBody>
-            <Auth tabindex={index} />
-          </ModalBody>
-          <ModalCloseButton />
-        </ModalContent>
+        <ModalOverlay backdropFilter="blur(10px)" />
+        <ScaleFade in={isOpen}>
+          <ModalContent w={{ base: "95vw" }} borderRadius="xl" boxShadow="2xl">
+            <ModalHeader></ModalHeader>
+            <ModalBody>
+              <Auth tabindex={index} />
+            </ModalBody>
+            <ModalCloseButton />
+          </ModalContent>
+        </ScaleFade>
       </Modal>
     </Box>
   );

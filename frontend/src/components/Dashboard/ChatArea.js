@@ -208,7 +208,7 @@ export const ChatArea = () => {
         h="100%"
         direction="column"
       >
-        <Heading fontSize="2xl">Welcome to Conversa</Heading>
+        <Heading fontSize="2xl">Welcome to DivineTalk</Heading>
         <Text>Select a chat to start messaging</Text>
       </Flex>
     );
