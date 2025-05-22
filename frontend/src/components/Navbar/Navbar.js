@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
-import { Box, Button, Flex, Text, Link, useDisclosure } from "@chakra-ui/react";
+import { Box, Button, Flex, Text, Link, useDisclosure, Image } from "@chakra-ui/react";
 import { FaGithub, FaMoon, FaSun } from "react-icons/fa";
 import ProfileMenu from "./ProfileMenu";
 import chatContext from "../../context/chatContext";
+import powerButtonLogo from "../../assets/images/power-button.svg";
 
 const Navbar = (props) => {
   const context = useContext(chatContext);
@@ -72,8 +73,11 @@ const Navbar = (props) => {
           md: "block",
         }}
       >
-        <Flex justify={"space-between"}>
-          <Text fontSize="2xl">DivineTalk</Text>
+        <Flex justify={"space-between"} alignItems="center">
+          <Flex alignItems="center">
+            <Image src={powerButtonLogo} alt="DivineTalk Logo" boxSize="40px" mr={2} />
+            <Text fontSize="2xl">DivineTalk</Text>
+          </Flex>
 
           <Box
             display={{ base: "none", md: "block" }}

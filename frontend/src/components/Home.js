@@ -15,11 +15,13 @@ import {
   useColorMode,
   SlideFade,
   ScaleFade,
+  Image,
 } from "@chakra-ui/react";
 import Auth from "./Authentication/Auth";
 import { useContext } from "react";
 import chatContext from "../context/chatContext";
 import { Link, useNavigate } from "react-router-dom";
+import powerButtonLogo from "../assets/images/power-button.svg";
 
 const Home = () => {
   // context
@@ -71,16 +73,18 @@ const Home = () => {
             maxW="md"
             w="100%"
           >
-            <Heading 
-              fontSize={"6xl"} 
-              fontWeight={"bold"} 
-              fontFamily={"Work sans"}
-              bgGradient="linear(to-r, purple.400, pink.400)"
-              bgClip="text"
-              mb={4}
-            >
-              DivineTalk
-            </Heading>
+            <Flex direction="column" align="center" mb={4}>
+              <Image src={powerButtonLogo} alt="DivineTalk Logo" boxSize="80px" mb={4} />
+              <Heading 
+                fontSize={"6xl"} 
+                fontWeight={"bold"} 
+                fontFamily={"Work sans"}
+                bgGradient="linear(to-r, purple.400, pink.400)"
+                bgClip="text"
+              >
+                DivineTalk
+              </Heading>
+            </Flex>
             <Text fontSize="xl" fontWeight="medium" mb={8} color={colorMode === "dark" ? "gray.300" : "gray.600"}>
               Connect & Chat in Real-Time
             </Text>
