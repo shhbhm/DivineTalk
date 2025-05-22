@@ -1,119 +1,116 @@
 # DivineTalk Chat Application
 
-A real-time chat application built with the MERN stack (MongoDB, Express, React, Node.js).
-
-![DivineTalk Logo](screenshots/banner.png)
+A real-time chat application built with the MERN stack (MongoDB, Express, React, Node.js) that allows users to communicate through text messages and share files.
 
 ## Features
 
-- Real-time messaging with socket.io integration
-- User authentication with JWT
-- Friend management system
-- Online status indicators
-- Profile customization
-- Dark/Light theme
-- Message delivery and read receipts
-- File and image sharing
-- Typing indicators
-- Mobile responsive design
+- **User Authentication**: Secure login and registration system
+- **Real-time Messaging**: Instant message delivery using Socket.io
+- **File Sharing**: Send and receive images, documents, and other files
+- **User Presence**: See when users are online or last active
+- **Responsive Design**: Works on desktop and mobile devices
+- **Dark/Light Mode**: Toggle between dark and light theme
+- **Search Functionality**: Find users and messages easily
+- **Profile Management**: Update user profile information
 
 ## Tech Stack
 
-- **Frontend**: React.js with Chakra UI
-- **Backend**: Express.js, Node.js
-- **Database**: MongoDB
-- **Real-time Communication**: Socket.io
-- **Authentication**: JWT (JSON Web Tokens)
-- **File Storage**: AWS S3/Cloudinary
+### Frontend
+- React.js with Hooks
+- Chakra UI for styling
+- Socket.io Client for real-time communication
+- React Router for navigation
 
-## Screenshots
+### Backend
+- Node.js and Express.js
+- MongoDB for database
+- Socket.io for WebSocket connections
+- JWT for authentication
+- AWS S3 for file storage
 
-### Authentication Screen
-![Authentication Screen](screenshots/banner.png)
-
-### Chat Interface
-![Chat Interface](screenshots/new_message.png)
-
-## Setup Instructions
+## Installation
 
 ### Prerequisites
-- Node.js (v14.0.0 or later)
-- MongoDB (local or Atlas)
-- npm or yarn
+- Node.js (v14 or above)
+- MongoDB
+- Git
 
-### Installation
+### Setup Instructions
 
 1. Clone the repository
-```
+```bash
 git clone https://github.com/shhbhm/DivineTalk.git
 cd DivineTalk
 ```
 
 2. Install dependencies for backend
-```
+```bash
 cd backend
 npm install
 ```
 
 3. Install dependencies for frontend
-```
+```bash
 cd ../frontend
 npm install
 ```
 
-4. Create .env file in the backend directory with the following variables:
+4. Create a `.env` file in the backend directory with the following variables:
 ```
-# Server Configuration
 PORT=5000
-
-# Database
 MONGO_URI=your_mongodb_connection_string
-
-# JWT Authentication (use a strong, random string)
-JWT_SECRET=your_secure_jwt_secret
-
-# For AI features (optional)
-GENERATIVE_API_KEY=your_google_ai_api_key
-
-# Other optional configurations for full functionality
-# AWS S3 for file storage
-# EMAIL/PASSWORD for notifications
-# CLOUDINARY credentials if using it for image uploads
+JWT_SECRET=your_jwt_secret
+AWS_ACCESS_KEY_ID=your_aws_access_key
+AWS_SECRET_ACCESS_KEY=your_aws_secret_key
+AWS_REGION=your_aws_region
+AWS_BUCKET_NAME=your_s3_bucket_name
 ```
-
-IMPORTANT: Never commit your .env file or add API keys directly to your code.
 
 5. Start the backend server
-```
+```bash
 cd ../backend
 npm start
 ```
 
-6. Start the frontend server
-```
+6. Start the frontend development server
+```bash
 cd ../frontend
 npm start
 ```
 
-## Project Structure
-- `/backend` - Express server, API routes, controllers, and models
-- `/frontend` - React application with components and services
-  - `/src/components` - React components
-  - `/src/context` - React context for state management
-  - `/src/assets` - Static assets like images and sounds
+7. Open your browser and navigate to `http://localhost:3000`
 
-## Future Enhancements
-- Group chat functionality
-- End-to-end encryption
-- Voice and video calling
-- Message reactions
-- Message search
+## API Endpoints
+
+### Authentication
+- `POST /api/auth/register` - Register a new user
+- `POST /api/auth/login` - Login a user
+- `POST /api/auth/getotp` - Get OTP for verification
+
+### User Management
+- `GET /api/user/profile` - Get current user profile
+- `POST /api/user/update` - Update user profile
+- `GET /api/user/search` - Search for users
+- `GET /api/user/online-status/:id` - Get user online status
+- `GET /api/user/non-friends` - Get users not in conversations
+- `GET /api/user/all-users` - Get all users
+- `GET /api/user/presigned-url` - Get S3 presigned URL for uploads
+
+### Conversations
+- Various endpoints for managing chats and messages
 
 ## Contributing
+
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+This project is licensed under the MIT License.
 
 ## Author
-Developed by Shubham Solanki
+
+- **Shubham Solanki** - [GitHub Profile](https://github.com/shhbhm)
+
+## Acknowledgments
+
+- Thanks to all contributors and supporters of this project!
