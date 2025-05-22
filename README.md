@@ -13,6 +13,15 @@ A real-time chat application built with the MERN stack (MongoDB, Express, React,
 - **Search Functionality**: Find users and messages easily
 - **Profile Management**: Update user profile information
 
+## Screenshots
+
+The application features a clean, modern interface with both light and dark modes.
+
+- Authentication screen
+- Chat dashboard
+- Profile settings
+- Message interface with file sharing
+
 ## Tech Stack
 
 ### Frontend
@@ -98,6 +107,23 @@ npm start
 
 ### Conversations
 - Various endpoints for managing chats and messages
+
+## Project Structure
+
+```
+DivineTalk/
+├── backend/           # Express server, API, and database
+│   ├── Controllers/   # API controller functions
+│   ├── middleware/    # Auth middleware and validators
+│   ├── Models/        # MongoDB schemas
+│   └── Routes/        # API routes
+├── frontend/          # React application
+│   ├── public/        # Static files
+│   └── src/           # React source code
+│       ├── components/  # React components
+│       ├── context/    # Context API state
+│       └── assets/     # Images and other assets
+```
 
 ## Contributing
 
