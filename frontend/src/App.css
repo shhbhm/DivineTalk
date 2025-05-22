@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding-bottom: 50px; /* Add padding to prevent content from being hidden behind fixed footer */
 }
 
 .App-logo {
