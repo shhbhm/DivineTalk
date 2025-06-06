@@ -43,6 +43,10 @@ Creating a group:
 Chat with Ai BOT:
 ![Screenshot 2025-06-06 133056](https://github.com/user-attachments/assets/10d1960f-83f9-44fb-946d-c537967f4bea)
 
+Send Image:
+![Screenshot 2025-06-06 231717](https://github.com/user-attachments/assets/0c165610-090d-4ae4-a68a-e28d1a43b3ca)
+![Screenshot 2025-06-06 231750](https://github.com/user-attachments/assets/f3786c7f-bd5f-4b27-9262-b10c3822a942)
+
 ## Tech Stack
 
 ### Frontend
