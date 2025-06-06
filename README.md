@@ -62,44 +62,43 @@ Chat with Ai BOT:
 - **JWT**: Secures authentication and protects API routes.
 
 ## Project Structure
-
 DivineTalk/
 ├── backend/
-│ ├── config/
-│ │ └── imageupload.js # Cloudinary configuration
-│ ├── controllers/
-│ │ ├── auth_controller.js # Authentication logic
-│ │ └── message_controller.js # Message and AI response handling
-│ ├── middleware/
-│ │ └── fetchUser.js # JWT verification middleware
-│ ├── models/
-│ │ ├── User.js # User schema
-│ │ ├── Message.js # Message schema
-│ │ └── Conversation.js # Conversation schema
-│ ├── routes/
-│ │ ├── auth_routes.js # Authentication endpoints
-│ │ ├── message.js # Message operations
-│ │ ├── conversation.js # Conversation management
-│ │ ├── user.js # User operations
-│ │ └── upload.js # Image upload endpoint
-│ ├── socket/
-│ │ ├── index.js # Socket.IO server setup
-│ │ └── handlers.js # Socket.IO event handlers
-│ └── server.js # Main Express server
+│   ├── config/
+│   │   └── imageupload.js       # Cloudinary configuration
+│   ├── controllers/
+│   │   ├── auth_controller.js   # Authentication logic
+│   │   └── message_controller.js # Message and AI response handling
+│   ├── middleware/
+│   │   └── fetchUser.js         # JWT verification middleware
+│   ├── models/
+│   │   ├── User.js              # User schema
+│   │   ├── Message.js           # Message schema
+│   │   └── Conversation.js      # Conversation schema
+│   ├── routes/
+│   │   ├── auth_routes.js       # Authentication endpoints
+│   │   ├── message.js           # Message operations
+│   │   ├── conversation.js      # Conversation management
+│   │   ├── user.js              # User operations
+│   │   └── upload.js            # Image upload endpoint
+│   ├── socket/
+│   │   ├── index.js             # Socket.IO server setup
+│   │   └── handlers.js          # Socket.IO event handlers
+│   └── server.js                # Main Express server
 ├── src/
-│ ├── components/
-│ │ ├── ChatArea.js # Main chat interface
-│ │ ├── Message.js # Message bubble component
-│ │ ├── FileUploadModal.js # Image upload UI
-│ │ ├── Sidebar.js # Chat list and navigation
-│ │ └── UserProfile.js # User profile management
-│ ├── context/
-│ │ ├── chatContext.js # Chat state management
-│ │ └── AuthContext.js # Authentication state management
-│ └── App.js # Main React app
-├── .env # Environment variables
-├── package.json # Project dependencies
-└── README.md # This file
+│   ├── components/
+│   │   ├── ChatArea.js          # Main chat interface
+│   │   ├── Message.js           # Message bubble component
+│   │   ├── FileUploadModal.js   # Image upload UI
+│   │   ├── Sidebar.js           # Chat list and navigation
+│   │   └── UserProfile.js       # User profile management
+│   ├── context/
+│   │   ├── chatContext.js       # Chat state management
+│   │   └── AuthContext.js       # Authentication state management
+│   └── App.js                   # Main React app
+├── .env                         # Environment variables
+├── package.json                 # Project dependencies
+└── README.md                    # This file
 
 ## Prerequisites
 
