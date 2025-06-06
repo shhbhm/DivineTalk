@@ -23,7 +23,7 @@ Creating an Account:
   ![Screenshot 2025-06-05 171806](https://github.com/user-attachments/assets/1cd785e2-5be4-4439-9d21-50410cd49fb9)
 
 Login page:
-![Screenshot 2025-06-06 131456](https://github.com/user-attachments/assets/b841007c-d557-456a-a136-bdd8db7695a9)
+![Screenshot 2025-06-05 171832](https://github.com/user-attachments/assets/c0c8459e-1d2b-4622-b05b-d17b8ecb30c7)
 
 Starting a chat:
 ![Screenshot 2025-06-06 131845](https://github.com/user-attachments/assets/1d4f462f-46b0-4570-9f15-afa9285a5e9c)
