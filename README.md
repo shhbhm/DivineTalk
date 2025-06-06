@@ -44,8 +44,8 @@ Chat with Ai BOT:
 ![Screenshot 2025-06-06 133056](https://github.com/user-attachments/assets/10d1960f-83f9-44fb-946d-c537967f4bea)
 
 Send Image:
-![Screenshot 2025-06-06 231717](https://github.com/user-attachments/assets/0c165610-090d-4ae4-a68a-e28d1a43b3ca)
-![Screenshot 2025-06-06 231750](https://github.com/user-attachments/assets/f3786c7f-bd5f-4b27-9262-b10c3822a942)
+![Screenshot 2025-06-06 232601](https://github.com/user-attachments/assets/86e8caff-7443-49b5-a0d5-1f8d1fe1be89)
+![Screenshot 2025-06-06 232652](https://github.com/user-attachments/assets/c52fe9ff-265c-4597-9178-52111c5e808f)
 
 ## Tech Stack
 
